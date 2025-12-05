@@ -2,19 +2,17 @@
 require '../db.php';
 
 if (!isset($_GET['id'])) {
-    die("Invalid request");
+    die("Invalid request.");
 }
 
-$id = $_GET['id'];
+$id = intval($_GET['id']);
 
-// Delete the record
-$stmt = $conn->prepare("DELETE FROM patient_medical_record_list WHERE id = ?");
+// Delete the medical record
+$stmt = $conn->prepare("DELETE FROM medical_records WHERE id = ?");
 $stmt->bind_param("i", $id);
+$stmt->execute();
 
-if (!$stmt->execute()) {
-    die("Error deleting record: " . $stmt->error);
-}
-
-// Redirect back to list
-header("Location: patient_medical_record_list.php?deleted=1");
+// Redirect back to the medical records list
+header("Location: medical_records_list.php");
 exit;
+?>

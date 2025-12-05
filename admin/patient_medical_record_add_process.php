@@ -28,5 +28,5 @@ $stmt->bind_param(
 if (!$stmt->execute()) {
     die("Error: " . $stmt->error);
 }
-    header("Location: patient_medical_list.php?success=1");
+    header("Location: medical_records_list.php?success=1");
     exit;
