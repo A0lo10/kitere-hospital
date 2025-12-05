@@ -102,6 +102,7 @@ a:hover {
 <form action="patient_register_process.php" method="post">
 <div class="form-row"><label>National ID</label><input name="national_id" required></div><br><br>
 <div class="form-row"><label>Full Name</label><input name="name" required></div><br><br>
+<div class="tel-row"><label>Phone Number</label><input name="tel" required></div><br><br>
 <div class="form-row"><label>Date of Birth</label><input type="date" name="dob" required></div><br><br>
 <div class="form-row"><label>Village</label><input name="village"></div><br><br>
 <div class="form-row"><label>Gender</label><br><br>

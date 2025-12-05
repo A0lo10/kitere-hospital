@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+// Destroy all session data
+session_unset();
 session_destroy();
-header("Location: patient_login.php");
+
+// Redirect to homepage
+header("Location: ../index.php"); // Adjust the path if your homepage is elsewhere
 exit;

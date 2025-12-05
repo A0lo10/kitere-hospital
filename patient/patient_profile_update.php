@@ -20,6 +20,7 @@ $dob = $_POST['dob'] ?? null;
 $village = trim($_POST['village'] ?? null);
 $gender = $_POST['gender'] ?? 'Male';
 $email = trim($_POST['email'] ?? null);
+$phone = trim($_POST['phone'] ?? null); // Added phone
 $password = $_POST['password'] ?? '';
 
 if (!$name || !$dob) {
@@ -28,13 +29,14 @@ if (!$name || !$dob) {
     exit;
 }
 
+// Update query
 if ($password) {
     $hash = password_hash($password, PASSWORD_DEFAULT);
-    $stmt = $conn->prepare('UPDATE patients SET name=?, dob=?, village=?, gender=?, email=?, password=? WHERE id=?');
-    $stmt->bind_param('ssssssi', $name, $dob, $village, $gender, $email, $hash, $id);
+    $stmt = $conn->prepare('UPDATE patients SET name=?, dob=?, village=?, gender=?, email=?, phone=?, password=? WHERE id=?');
+    $stmt->bind_param('sssssssi', $name, $dob, $village, $gender, $email, $phone, $hash, $id);
 } else {
-    $stmt = $conn->prepare('UPDATE patients SET name=?, dob=?, village=?, gender=?, email=? WHERE id=?');
-    $stmt->bind_param('sssssi', $name, $dob, $village, $gender, $email, $id);
+    $stmt = $conn->prepare('UPDATE patients SET name=?, dob=?, village=?, gender=?, email=?, phone=? WHERE id=?');
+    $stmt->bind_param('ssssssi', $name, $dob, $village, $gender, $email, $phone, $id);
 }
 
 if ($stmt->execute()) {

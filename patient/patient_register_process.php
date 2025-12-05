@@ -31,8 +31,8 @@ $stmt->close();
 
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
-$stmt = $conn->prepare('INSERT INTO patients (national_id,name,dob,village,gender,email,password) VALUES (?,?,?,?,?,?,?)');
-$stmt->bind_param('sssssss', $national_id, $name, $dob, $village, $gender, $email, $hash);
+$stmt = $conn->prepare("INSERT INTO patients (name, email, password, phone) VALUES (?, ?, ?, ?)");
+$stmt->bind_param("ssss", $name, $email, $hashedPassword, $phone);
 
 if ($stmt->execute()) {
     $_SESSION['notice'] = 'Registration successful. Please login.';
