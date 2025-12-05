@@ -2,9 +2,6 @@
 session_start();
 // Basic API test
 echo "PHP is running on Vercel!";
-
-?>
-
 <!doctype html>
 <html>
 <head>
@@ -94,3 +91,4 @@ body {
 </div>
 </body>
 </html>
+?>
