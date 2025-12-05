@@ -14,6 +14,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* Stack card and footer */
     height: 100vh;
     font-family: Arial, sans-serif;
 }
@@ -25,6 +26,7 @@ body {
     border-radius: 20px;
     background-color: #111; /* Slightly lighter than black for contrast */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px; /* Space for footer */
 }
 
 /* Welcome message */
@@ -54,6 +56,17 @@ body {
     transform: scale(1.05); /* Slight grow on hover */
 }
 
+/* Footer */
+.footer {
+    font-size: 0.9rem;
+    color: #888; /* Gray for subtle look */
+    text-align: center;
+    margin-top: 10px;
+}
+.footer span {
+    color: #00cfff; /* Highlight AloyceTech */
+    font-weight: bold;
+}
 </style>
 </head>
 <body>
@@ -69,6 +82,11 @@ body {
             <a class="btn" href="patient/patient_login.php">Patient</a>
             <a class="btn" href="admin/admin_login.php">Admin</a>
         </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        Powered by <span>AloyceTech</span>
     </div>
 </div>
 </body>
