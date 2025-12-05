@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     { "src": "api/**/*.php", "use": "vercel-php" },
-    { "src": "admin/admin_login.php/*.php", "use": "vercel-php" },
+    { "src": "admin/admin_login.php", "use": "vercel-php" },
     { "src": "patient/**/*.php", "use": "vercel-php" }
   ],
   "routes": [
