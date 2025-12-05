@@ -1,12 +1,16 @@
 {
   "version": 2,
   "builds": [
-    { "src": "public/*.php", "use": "vercel-php" },
-    { "src": "public/**/*.php", "use": "vercel-php" },
-    { "src": "api/**/*.php", "use": "vercel-php" }
+    { "src": "api/**/*.php", "use": "vercel-php" },
+    { "src": "admin/**/*.php", "use": "vercel-php" },
+    { "src": "patient/**/*.php", "use": "vercel-php" }
   ],
   "routes": [
-    { "src": "/api/index.php(.*)", "dest": "/api/$1" },
-    { "src": "/(.*)", "dest": "/public/$1" }
+    { "src": "^/$", "dest": "/api/index.php" },
+
+    { "src": "^/admin/(.*)$", "dest": "/admin/$1" },
+    { "src": "^/patient/(.*)$", "dest": "/patient/$1" },
+
+    { "src": "^/(.*)$", "dest": "/api/$1" }
   ]
 }
