@@ -1,6 +1,9 @@
 <?php
-require '../csrf.php';
+require __DIR__ . '/../db.php';
+require __DIR__ . '/../csrf.php';
+session_start();
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -141,3 +144,4 @@ p a:hover {
 </div>
 </body>
 </html>
+
